@@ -1,0 +1,15 @@
+EXECS = hello_world_omp hello_world_omp_2
+
+CC = g++
+CFLAGS = -Wall -ansi -pedantic
+LFLAGS = -fopenmp
+
+all: $(EXECS)
+
+hello_world_omp: hello_world_omp.cpp
+	$(CC) $(CFLAGS) $^ $(LFLAGS) -o $@
+
+hello_world_omp_2: hello_world_omp_2.cpp
+	$(CC) $(CFLAGS) $^ $(LFLAGS) -o $@
+clean:
+	rm -f a.out $(EXECS)

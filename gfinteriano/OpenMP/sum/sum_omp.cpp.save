@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <omp.h>
+int main(int argc, char** argv){
+omp_set_num_threads(4);
+int partial_sum,total_sum;
+
+#pragma omp parallel private(partial_sum)
+{
+	partial_sum = 0;
+total
+	// int thread_id;
+	//thread_id = omp_get_thread_num();
+	
+	 for(int i =0; i<8; i++){
+	 partial_sum +=i;
+	 }
+	printf("partial_sum= %d\n", partial_sum);
+	}
+	return 0;
+}
